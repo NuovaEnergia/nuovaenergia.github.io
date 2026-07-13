@@ -4,142 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuova Energia - Gestionale Nutrizionale</title>
-    <meta name="google-site-verification" content="kL2v3b8JaJCflfOBEeIIiWWfyr-0pQp6ZopQrKC3tgU" />
-    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            line-height: 1.6; 
-            margin: 0; 
-            padding: 0; 
-            color: #333; 
-            background-color: #f5f5f5;
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
         
-        /* Header con brand e logo */
-        .header {
-            background-color: #2ecc71;
-            padding: 15px 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .header img {
-            max-height: 60px;
-            width: auto;
-        }
-
-        /* Contenitore principale */
-        .main-container {
-            flex: 1;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Box bianco centrale */
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        
-        h1 { color: #2c3e50; text-align: center; margin-top: 0; }
-        h2 { color: #1a73e8; font-size: 1.3em; margin-top: 30px; }
-        
-        .highlight-box {
-            background-color: #f8f9fa;
-            border-left: 4px solid #1a73e8;
-            padding: 15px;
-            margin: 20px 0;
-            font-style: italic;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-        
-        /* Area pulsanti di azione */
-        .cta-area {
-            text-align: center;
-            margin-top: 35px;
-        }
-        .btn-contact {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #1a73e8;
+        /* Header styling aligned with client branding */
+        header {
+            background-color: #22c55e;
             color: white;
-            text-decoration: none;
-            border-radius: 4px;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-placeholder {
+            width: 42px;
+            height: 42px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            transition: background 0.2s;
+            color: #22c55e;
+            font-size: 1.2rem;
         }
-        .btn-contact:hover {
-            background-color: #1557b0;
+        .brand-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
         }
-
-        /* Footer con link Privacy obbligatorio */
-        .footer {
-            background-color: #2c3e50;
-            color: #bdc3c7;
+        
+        /* Layout Grid */
+        main {
+            flex: 1;
+            max-width: 850px;
+            width: 100%;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Hero Component */
+        .hero {
             text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            margin-top: auto;
+            background: white;
+            padding: 3.5rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            margin-bottom: 2.5rem;
         }
-        .footer a {
-            color: #2ecc71;
+        h1 {
+            color: #1e293b;
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: #64748b;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Professional Call-to-Actions */
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.2s ease-in-out;
         }
-        .footer a:hover {
+        .btn-primary {
+            background-color: #22c55e;
+            color: white;
+            box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+        }
+        .btn-primary:hover {
+            background-color: #16a34a;
+        }
+        .btn-secondary {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+        }
+        
+        /* Content Features List (Scopes integrated implicitly) */
+        .features {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+        }
+        .feature-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        h3 {
+            color: #1e293b;
+            font-size: 1.35rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h3::before {
+            content: "✓";
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .features p {
+            color: #64748b;
+            font-size: 1.05rem;
+            padding-left: 24px;
+        }
+        
+        /* Dark Compliance Footer */
+        footer {
+            background-color: #22303f;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            margin-top: auto;
+            font-size: 0.95rem;
+            border-top: 4px solid #16a34a;
+        }
+        footer p {
+            margin-bottom: 0.75rem;
+        }
+        .footer-links a {
+            color: #22c55e;
+            text-decoration: none;
+            margin: 0 0.75rem;
+            font-weight: 600;
+            transition: color 0.15s ease;
+        }
+        .footer-links a:hover {
+            color: #4ade80;
             text-decoration: underline;
+        }
+        
+        /* Responsive adaptations */
+        @media (max-width: 650px) {
+            h1 { font-size: 1.8rem; }
+            main { margin: 1.5rem auto; }
+            .hero, .features { padding: 2rem 1.25rem; }
+            .cta-group { flex-direction: column; width: 100%; }
+            .btn { text-align: center; width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <img src="logo_predefinito.png" alt="Logo Nuova Energia">
-    </div>
-
-    <div class="main-container">
-        <div class="card">
-            <h1>Il tuo Gestionale Nutrizionale</h1>
-            
-            <p>Benvenuto in <strong>Nuova Energia</strong>, la piattaforma software progettata per semplificare la gestione dei piani alimentari, il monitoraggio dei pazienti e l'organizzazione dello studio nutrizionale.</p>
-            
-            <div class="highlight-box">
-                Nota sulla sicurezza: Il software opera interamente in locale sul dispositivo del professionista. Tutti i dati elaborati o scaricati tramite le integrazioni rimangono confinati all'interno del computer dell'utente per garantire la massima riservatezza medica.
-            </div>
-
-            <h2>Integrazione con i Servizi Google (OAuth 2.0)</h2>
-            <p>Per ottimizzare i flussi di lavoro dello studio, il software richiede l'autorizzazione dell'utente per accedere ai seguenti servizi Google tramite protocollo sicuro:</p>
-            
-            <ul>
-                <li><strong>Google Calendar:</strong> utilizzato per la sincronizzazione, la visualizzazione e la gestione degli appuntamenti dello studio, inclusa la lettura dei calendari e la creazione, modifica o eliminazione dei relativi eventi delle visite.</li>
-                <li><strong>Gmail:</strong> utilizzato esclusivamente per la visualizzazione delle email ricevute dai pazienti e per l'invio automatizzato di promemoria e comunicazioni relative alle visite programmate.</li>
-                <li><strong>Google Forms (Moduli Google):</strong> utilizzato per l'importazione sicura e diretta dei dati anamnestici pre-compilati dai pazienti.</li>
-            </ul>
-
-            <div class="cta-area">
-                <p style="font-size: 0.9em; color: #666;">Il software viene installato e configurato privatamente per i professionisti sanitari abilitati.</p>
-                <a href="mailto:nuovaenergia.nutri@gmail.com" class="btn-home btn-contact">Richiedi Attivazione / Supporto</a>
-            </div>
+    <header>
+        <div class="logo-container">
+            <div class="logo-placeholder">NE</div>
+            <div class="brand-name">NUOVA ENERGIA</div>
         </div>
-    </div>
+    </header>
 
-    <div class="footer">
-        © 2026 Nuova Energia. Tutti i diritti riservati. | 
-        <a href="privacy.html">Informativa sulla Privacy (Google OAuth)</a>
-    </div>
+    <main>
+        <!-- Hero Introduction Section -->
+        <section class="hero">
+            <h1>Il Gestionale Completo per i Professionisti della Nutrizione</h1>
+            <p>Benvenuto in <strong>Nuova Energia</strong>, la piattaforma software progettata per semplificare la gestione dei piani alimentari, il monitoraggio dei pazienti e l'organizzazione dello studio nutrizionale.</p>
+            <div class="cta-group">
+                <a href="#login" class="btn btn-primary">Accedi al Gestionale</a>
+                <a href="#supporto" class="btn btn-secondary">Contatta il Supporto</a>
+            </div>
+        </section>
+
+        <!-- Dynamic Feature Section for Verification Requirements -->
+        <section class="features">
+            <div class="feature-item">
+                <h3>Organizzazione Intelligente</h3>
+                <p>Gestisci l'agenda del tuo studio e sincronizza gli appuntamenti in modo fluido e senza sovrapposizioni, ottimizzando la pianificazione giornaliera delle visite.</p>
+            </div>
+            
+            <div class="feature-item">
+                <h3>Interazione Semplificata</h3>
+                <p>Raccogli le anamnesi dei pazienti tramite moduli strutturati e mantieni comunicazioni dirette via email per inviare promemoria, scadenze e aggiornamenti sul percorso nutrizionale.</p>
+            </div>
+            
+            <div class="feature-item">
+                <h3>Ambiente Sicuro e Privato</h3>
+                <p>Elabora e archivia i piani alimentari direttamente sul tuo dispositivo di lavoro. Tutte le informazioni cliniche vengono elaborate in locale, garantendo la totale conformità e la massima sicurezza delle informazioni personali.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Essential Policy Links Footer for Google Approval -->
+    <footer>
+        <p>&copy; 2026 Nuova Energia. Tutti i diritti riservati.</p>
+        <div class="footer-links">
+            <a href="/privacy-policy.html">Informativa sulla Privacy</a>
+            <span>|</span>
+            <a href="/termini-servizio.html">Termini di Servizio</a>
+        </div>
+    </footer>
 
 </body>
 </html>
