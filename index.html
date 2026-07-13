@@ -4,231 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuova Energia - Gestionale Nutrizionale</title>
+ 
+    <!-- Icona per la barra dei preferiti e della scheda del browser -->
+    <link rel="icon" type="image/png" href="favicon.png">
+ 
     <style>
-        /* Reset & Base Styles */
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
-        
-        /* Header styling with original logo and brand text layout */
         header {
-            background-color: #22c55e;
+            background-color: #2ecc71; /* Verde Nutrizione */
             color: white;
-            padding: 1.25rem 2rem;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            margin-bottom: 10px;
         }
-        .logo-placeholder {
-            width: 42px;
-            height: 42px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #22c55e;
-            font-size: 1.2rem;
-        }
-        .brand-name {
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-        }
-        
-        /* Layout Grid */
-        main {
-            flex: 1;
-            max-width: 850px;
-            width: 100%;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-        
-        /* Hero Component */
-        .hero {
-            text-align: center;
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px 20px;
             background: white;
-            padding: 3.5rem 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            margin-bottom: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            flex: 1;
         }
         h1 {
-            color: #1e293b;
-            font-size: 2.25rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.25;
+            color: #2c3e50;
+            margin-bottom: 20px;
         }
-        .hero p {
-            font-size: 1.15rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
         }
-        
-        /* Contact Support Action ONLY (Mailto Integration) */
-        .cta-group {
-            display: flex;
-            justify-content: center;
-        }
-        .btn {
+        /* Bottone di supporto email nello stile originale */
+        .btn-support {
             display: inline-block;
-            padding: 0.85rem 2.25rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.2s ease-in-out;
-        }
-        .btn-primary {
-            background-color: #22c55e;
+            background-color: #2ecc71;
             color: white;
-            box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+            transition: background-color 0.2s;
+            font-size: 16px;
         }
-        .btn-primary:hover {
-            background-color: #16a34a;
+        .btn-support:hover {
+            background-color: #27ae60;
         }
-        
-        /* Content Features List (Scopes integrated implicitly) */
-        .features {
-            background: white;
-            padding: 3rem 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+        /* Sezione caratteristiche professionali integrata per Google */
+        .features-list {
+            text-align: left;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
         }
         .feature-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 25px;
         }
-        .feature-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        h3 {
-            color: #1e293b;
-            font-size: 1.35rem;
-            margin-bottom: 0.6rem;
+        .feature-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        h3::before {
+        .feature-title::before {
             content: "✓";
-            color: #22c55e;
+            color: #2ecc71;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 18px;
         }
-        .features p {
-            color: #64748b;
-            font-size: 1.05rem;
-            padding-left: 24px;
+        .feature-desc {
+            font-size: 15px;
+            color: #666;
+            padding-left: 22px;
+            line-height: 1.6;
         }
-        
-        /* Compliance Footer */
         footer {
-            background-color: #22303f;
-            color: #94a3b8;
+            background-color: #2c3e50;
+            color: white;
             text-align: center;
-            padding: 2.5rem 2rem;
+            padding: 20px;
+            font-size: 14px;
             margin-top: auto;
-            font-size: 0.95rem;
-            border-top: 4px solid #16a34a;
         }
-        footer p {
-            margin-bottom: 0.75rem;
-        }
-        .footer-links a {
-            color: #22c55e;
+        footer a {
+            color: #2ecc71;
             text-decoration: none;
-            margin: 0 0.75rem;
-            font-weight: 600;
-            transition: color 0.15s ease;
+            font-weight: bold;
         }
-        .footer-links a:hover {
-            color: #4ade80;
+        footer a:hover {
             text-decoration: underline;
-        }
-        
-        /* Responsive adaptations */
-        @media (max-width: 650px) {
-            h1 { font-size: 1.8rem; }
-            main { margin: 1.5rem auto; }
-            .hero, .features { padding: 2rem 1.25rem; }
-            .btn { text-align: center; width: 100%; }
         }
     </style>
 </head>
 <body>
-
+ 
     <header>
         <div class="logo-container">
-            <div class="logo-placeholder">NE</div>
-            <div class="brand-name">NUOVA ENERGIA</div>
+            <img src="logo_predefinito.png" alt="Logo Nuova Energia" style="max-height: 80px; width: auto;">
         </div>
     </header>
-
-    <main>
-        <!-- Hero Introduction Section (Emphasizing Local Access) -->
-        <section class="hero">
-            <h1>Il Gestionale Completo per i Professionisti della Nutrizione</h1>
-            <p>Benvenuto in <strong>Nuova Energia</strong>. Il nostro è un software gestionale ad accesso esclusivamente locale, eseguito in totale sicurezza direttamente sul tuo computer di lavoro, progettato per organizzare lo studio, strutturare i piani alimentari e monitorare i pazienti senza intermediari esterni.</p>
-            <div class="cta-group">
-                <!-- Direct Email Support Link -->
-                <a href="mailto:supporto@nuovaenergianutri.it" class="btn btn-primary">Contatta il Supporto via Email</a>
-            </div>
-        </section>
-
-        <!-- Feature Section for Verification Requirements -->
-        <section class="features">
+ 
+    <div class="container">
+        <h1>Il Gestionale Completo per i Professionisti della Nutrizione</h1>
+        <p>Benvenuto in <strong>Nuova Energia</strong>. Il nostro è un software gestionale ad accesso esclusivamente locale, eseguito in totale sicurezza direttamente sul tuo computer di lavoro, progettato per organizzare lo studio, strutturare i piani alimentari e monitorare i pazienti senza intermediari esterni.</p>
+        
+        <!-- Collegamento diretto per l'assistenza via mail -->
+        <a href="mailto:nuovaenergia.nutrizione@gmail.com" class="btn-support">Contatta il Supporto via Email</a>
+ 
+        <!-- Blocchi descrittivi delle funzionalità richiesti per l'approvazione delle API -->
+        <div class="features-list">
             <div class="feature-item">
-                <h3>Organizzazione Intelligente</h3>
-                <p>Gestisci l'agenda del tuo studio e sincronizza gli appuntamenti in modo fluido e senza sovrapposizioni, ottimizzando la pianificazione giornaliera delle visite tramite integrazione di calendario.</p>
+                <div class="feature-title">Organizzazione Intelligente</div>
+                <div class="feature-desc">Gestisci l'agenda del tuo studio e sincronizza gli appuntamenti in modo fluido e senza sovrapposizioni, ottimizzando la pianificazione giornaliera delle visite tramite integrazione di calendario.</div>
             </div>
             
             <div class="feature-item">
-                <h3>Interazione Semplificata</h3>
-                <p>Raccogli le anamnesi dei pazienti tramite moduli strutturati e mantieni comunicazioni dirette via email per inviare promemoria, scadenze e aggiornamenti sul percorso nutrizionale.</p>
+                <div class="feature-title">Interazione Semplificata</div>
+                <div class="feature-desc">Raccogli le anamnesi dei pazienti tramite moduli strutturati e mantieni comunicazioni dirette via email per inviare promemoria, scadenze e aggiornamenti sul percorso nutrizionale.</div>
             </div>
             
             <div class="feature-item">
-                <h3>Ambiente Sicuro e Privato</h3>
-                <p>Elabora e archivia i piani alimentari direttamente sul tuo dispositivo di lavoro. Tutte le informazioni cliniche vengono gestite ed elaborate localmente sul tuo PC, garantendo la totale conformità e la massima riservatezza.</p>
+                <div class="feature-title">Ambiente Sicuro e Privato</div>
+                <div class="feature-desc">Elabora e archivia i piani alimentari direttamente sul tuo dispositivo di lavoro. Tutte le informazioni personali e cliniche vengono gestite ed elaborate localmente sul tuo PC, garantendo la totale conformità e la massima riservatezza.</div>
             </div>
-        </section>
-    </main>
-
-    <!-- Essential Policy Links Footer for Google Approval -->
-    <footer>
-        <p>&copy; 2026 Nuova Energia. Tutti i diritti riservati.</p>
-        <div class="footer-links">
-            <a href="/privacy-policy.html">Informativa sulla Privacy</a>
-            <span>|</span>
-            <a href="/termini-servizio.html">Termini di Servizio</a>
         </div>
+    </div>
+ 
+    <footer>
+        <p>&copy; 2026 Nuova Energia. Tutti i diritti riservati. | <a href="privacy.html">Informativa sulla Privacy</a> | <a href="termini-servizio.html">Termini di Servizio</a></p>
     </footer>
-
+ 
 </body>
 </html>
