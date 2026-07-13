@@ -6,9 +6,9 @@
     <title>Termini di Servizio - Nuova Energia</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6; /* Tuo sfondo originale */
+            color: #333;
             line-height: 1.6;
             padding: 2rem 1rem;
         }
@@ -17,39 +17,45 @@
             margin: 0 auto;
             background: white;
             padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         header {
-            border-bottom: 2px solid #22c55e;
+            border-bottom: 2px solid #2ecc71; /* Tuo Verde Nutrizione */
             padding-bottom: 1rem;
             margin-bottom: 2rem;
         }
-        h1 { color: #1e293b; font-size: 2rem; }
-        h2 { color: #1e293b; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.5rem; }
-        p, ul { margin-bottom: 1rem; }
-        ul { padding-left: 1.5rem; }
+        h1 { color: #2c3e50; font-size: 2rem; }
+        h2 { color: #2c3e50; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+        p, ul { margin-bottom: 1rem; font-size: 16px; }
         footer {
             margin-top: 3rem;
             font-size: 0.9rem;
-            color: #64748b;
+            color: #666;
             text-align: center;
             border-top: 1px solid #e2e8f0;
             padding-top: 1rem;
         }
+        /* Pulsante per tornare indietro con il tuo colore verde */
         .back-btn {
             display: inline-block;
             margin-bottom: 1.5rem;
-            color: #22c55e;
+            color: #2ecc71; 
             text-decoration: none;
             font-weight: bold;
+            font-size: 16px;
+        }
+        .back-btn:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="/" class="back-btn">← Torna alla Home</a>
+    <!-- Collegamento corretto che punta al file index.html senza rompersi -->
+    <a href="index.html" class="back-btn">← Torna alla Home</a>
+    
     <header>
         <h1>Termini di Servizio</h1>
         <p>Ultimo aggiornamento: 13 Luglio 2026</p>
@@ -65,7 +71,7 @@
         <p>Nuova Energia fornisce uno strumento software per professionisti della nutrizione volto a ottimizzare l'organizzazione dello studio, la strutturazione dei piani alimentari e la gestione degli appuntamenti. Il software si integra, previo consenso esplicito dell'utente, con alcuni servizi di terze parti (come l'ecosistema Google) per agevolare la sincronizzazione dei calendari e l'invio di comunicazioni di servizio.</p>
 
         <h2>3. Utilizzo dei Dati e Integrazioni</h2>
-        <p>L'integrazione con i servizi esterni viene attivata esclusivamente su richiesta dell'utente tramite protocolli sicuri (OAuth). Nuova Energia non memorizza né condivide le credenziali di accesso esterne. I dati personali e clinici dei pazienti inseriti nel software vengono elaborati nel pieno rispetto delle normative vigenti e delle scelte di configurazione dell'utente (archiviazione locale/cloud proprietaria).</p>
+        <p>L'integrazione con i servizi esterni viene attivata esclusivamente su richiesta dell'utente tramite protocolli sicuri (OAuth). Nuova Energia non memorizza né condivide le credenciales di accesso esterne. I dati personali e clinici dei pazienti inseriti nel software vengono eliminati o elaborati nel pieno rispetto delle normative vigenti e delle scelte di configurazione dell'utente (archiviazione locale).</p>
 
         <h2>4. Responsabilità dell'Utente</h2>
         <p>Il professionista sanitario o l'operatore che utilizza Nuova Energia è l'unico responsabile della correttezza delle informazioni inserite, della gestione dei consensi dei propri pazienti e del rispetto del segreto professionale o delle norme sulla privacy (GDPR).</p>
