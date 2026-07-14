@@ -20,6 +20,14 @@
         h1 { color: #1a73e8; }
         h2 { color: #5f6368; }
         
+        /* Stile per il testo in inglese (opzionale per differenziarlo leggermente) */
+        .en-text {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+            display: block;
+        }
+        
         /* Stile per il pulsante Torna alla Home */
         .btn-home {
             display: inline-block;
@@ -45,36 +53,53 @@
     </div>
 
     <h1>Informativa sulla Privacy e Trattamento Dati (Google OAuth)</h1>
-    <p><strong>Data di ultima revisione: 6 luglio 2026</strong></p>
+    <p><strong>Data di ultima revisione / Last Updated: 14 luglio 2026</strong></p>
 
     <p>Il Dott. Parrinello Giovanni (di seguito "il Professionista"), in qualità di Titolare del Trattamento, si impegna a proteggere la privacy degli utenti che utilizzano la piattaforma e il software "Nuova Energia" (accessibile tramite il sito web <a href="https://www.nuovaenergianutri.it">https://www.nuovaenergianutri.it</a>).</p>
 
-    <h2>1. Dati raccolti tramite le API di Google (OAuth 2.0)</h2>
+    <h2>1. Dati raccolti tramite le API di Google (OAuth 2.0) / Data Accessed</h2>
     <p>Il software sviluppato da Nuova Energia richiede l'autorizzazione dell'utente per accedere ai seguenti servizi Google tramite protocollo sicuro OAuth 2.0:</p>
     <ul>
-        <li>Google Calendar: per la sincronizzazione, visualizzazione e gestione degli appuntamenti dello studio, inclusa la lettura dei calendari e la creazione, modifica o eliminazione dei relativi eventi.</li>
-        <li>Gmail: per la visualizzazione delle email ricevute dai pazienti e per l'invio automatizzato di promemoria e comunicazioni relative alle visite.</li>
-        <li>Google Forms (Moduli Google): per l'importazione dei dati anamnestici compilati dai pazienti.</li>
+        <li>
+            <strong>Google Calendar (<code>.../auth/calendar.events</code>):</strong> per la sincronizzazione, visualizzazione e gestione degli appuntamenti dello studio, inclusa la lettura dei calendari e la creazione, modifica o aggiornamento dei relativi eventi.
+        </li>
+        <li>
+            <strong>Gmail (<code>.../auth/gmail.readonly</code>, <code>.../auth/gmail.send</code>):</strong> per la visualizzazione delle email ricevute dai pazienti e per l'invio automatizzato di promemoria e comunicazioni relative alle visite.
+        </li>
+        <li>
+            <strong>Google Forms (<code>.../auth/forms.body</code>, <code>.../auth/forms.responses.readonly</code>):</strong> per la creazione di moduli e l'importazione in locale delle risposte e dei dati anamnestici compilati dai pazienti.
+        </li>
     </ul>
+    <span class="en-text">Our desktop application accesses the following Google user data based on the permissions granted by the user: raw email content and metadata (via gmail.readonly and gmail.send), Google Calendar event details (via calendar.events), and Google Forms structures and responses (via forms.body and forms.responses.readonly). No aggregated or anonymized tracking data is collected from your Google account.</span>
 
-    <h2>2. Finalità e conformità all'uso dei dati (Google Limited Use Policy)</h2>
+    <h2>2. Finalità e conformità all'uso dei dati (Google Limited Use Policy) / Data Use</h2>
     <p>L'uso delle informazioni ricevute dalle API di Google da parte del software rispetta rigorosamente le Norme sui dati dei servizi API di Google, inclusi i requisiti per l'Uso Limitato (Limited Use Requirements).</p>
     <p>I dati vengono utilizzati esclusivamente per fornire le funzionalità operative descritte e non vengono memorizzati su server esterni al dispositivo dell'utente.</p>
-
     <p>Nello specifico:</p>
     <ul>
         <li>Non condividiamo, vendiamo o trasmettiamo in nessun caso i dati personali a terze parti.</li>
         <li>Non utilizziamo i dati ottenuti tramite le API di Google per scopi pubblicitari, profilazione commerciale o per il tracciamento del comportamento dell'utente.</li>
         <li>L'autenticazione avviene sul cloud sicuro di Google; il software non entra mai in possesso della password dell'account.</li>
     </ul>
+    <span class="en-text">The application’s use and transfer to any other app of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements. Google user data is used exclusively to power the local core features of the application (scheduling, local form processing, and email communication) within the local user interface.</span>
 
-    <h2>3. Responsabilità sui Moduli Google (Google Forms)</h2>
+    <h2>3. Trasferimento e Condivisione dei Dati / Data Transfer</h2>
+    <p>Il software opera interamente in locale sul computer dell'utente. Non condividiamo, vendiamo, affittiamo o trasmettiamo in nessun caso i dati personali o le informazioni ottenute tramite le API di Google a terze parti, server cloud esterni o piattaforme pubblicitarie.</p>
+    <span class="en-text">We do not sell, rent, trade, or transfer any Google user data to third parties. Because this application operates entirely as standalone desktop software, all data fetched from Google APIs remains strictly on the user's local machine. No data is transmitted to our servers or any external third-party services.</span>
+
+    <h2>4. Protezione e Sicurezza dei Dati / Data Protection</h2>
+    <p>Tutte le interazioni tra l'applicazione desktop e le API di Google avvengono tramite connessioni crittografate che utilizzano protocolli sicuri standard del settore (SSL/TLS) durante il transito. Localmente, i dati sono protetti all'interno dell'infrastruttura di sicurezza del sistema operativo dell'utente. Il software non entra mai in possesso della password dell'account Google.</p>
+    <span class="en-text">All interactions between the desktop application and Google APIs are encrypted using industry-standard Secure Socket Layer (SSL/TLS) protocols during transit. Locally, data is restricted within the application's isolated environment and is protected by the security infrastructure of the user’s operating system.</span>
+
+    <h2>5. Conservazione e Cancellazione dei Dati / Data Retention & Deletion</h2>
+    <p>I dati dell'utente Google non vengono conservati in modo permanente su server esterni. I dati vengono memorizzati nella cache locale solo per il tempo strettamente necessario a eseguire le sessioni attive nel software. L'utente può eliminare definitivamente tutti i dati memorizzati in locale in qualsiasi momento disconnettendo l'account Google dall'app, svuotando la cache o disinstallando il software.</p>
     <p>L'importazione dei dati avviene localmente sul dispositivo dell'utente. La cancellazione e la successiva gestione dei moduli sorgente su Google Forms rimangono sotto l'esclusiva responsabilità del professionista utilizzatore, in qualità di Titolare autonomo del Trattamento.</p>
+    <span class="en-text">We do not retain your Google data on any external servers. Google user data is cached locally only as long as necessary to execute the active session or workflow within the app. Users can permanently delete all locally stored data at any time by logging out of the Google integration inside the app, clearing the application cache, or uninstalling the software.</span>
 
-    <h2>4. Diritti dell'utente e revoca del consenso</h2>
+    <h2>6. Diritti dell'utente e revoca del consenso / User Rights</h2>
     <p>L'utente può revocare in qualsiasi momento l'accesso del software ai propri dati Google direttamente dalle impostazioni di sicurezza del proprio Account Google (sezione "App di terze parti con accesso al conto"), oppure interrompendo l'uso delle funzioni integrate.</p>
 
-    <h2>5. Contatti</h2>
+    <h2>7. Contatti / Contacts</h2>
     <p>Per qualsiasi richiesta di chiarimento sul trattamento dei dati, è possibile contattare il Titolare al seguente identificativo fiscale e indirizzo email:</p>
     <p>
         Titolare del Trattamento: Dott. Parrinello Giovanni <br>
